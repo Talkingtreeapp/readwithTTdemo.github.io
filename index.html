@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Web Speech Demo</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery.mark.js"></script>
+    <script src="assets/js/articulate.js"></script>
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p id="msg"></p>
+
+      <div class="option">
+        <label for="voice">Voice</label>
+        <div name="voice" id="voice"></div>
+        <a href="#" id="reload">Reload</a>
+      </div>
+      <div class="option">
+        <label for="volume">Volume</label>
+        <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1" oninput="update(this,value)">
+        <span class="val">1.0</span>
+      </div>
+      <div class="option">
+        <label for="rate">Rate</label>
+        <input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1" oninput="update(this,value)">
+        <span class="val">1.0</span>
+      </div>
+      <div class="option">
+        <label for="pitch">Pitch</label>
+        <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1" oninput="update(this,value)">
+        <span class="val">1.0</span>
+      </div>
+
+
+      <div class="articulate-area">
+        <button onclick="speak('div.speech')" class="btn btn-primary">Speak</button>
+        <button onclick="pause()" class="btn btn-danger">Pause</button>
+        <button onclick="resume()" class="btn btn-info">Resume</button>
+        <button onclick="stop()" class="btn btn-success">Stop</button>
+      </div>
+      <hr>
+      <article>
+        <div class="intro">
+          <h1>Web Speech Demo</h1>
+          <h2>JavaScript</h2>
+        </div>
+       
+        <div class="speech">
+          <p>JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins.[6] JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage, or graphics facilities, relying for these upon the host environment in which it is embedded.</p>
+          <p>Although there are strong outward similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two are distinct languages and differ greatly in their design. JavaScript was influenced by programming languages such as Self and Scheme.</p>
+          <p>JavaScript is also used in environments that are not Web-based, such as PDF documents, site-specific browsers, and desktop widgets. Newer and faster JavaScript virtual machines (VMs) and platforms built upon them have also increased the popularity of JavaScript for server-side Web applications. On the client side, developers have traditionally implemented JavaScript as an interpreted language, but more recent browsers perform just-in-time compilation. Programmers also use JavaScript in video-game development, in crafting desktop and mobile applications, and in server-side network programming with run-time environments such as Node.js.</p>
+        </div>
+      </article>
+
+      <div id="speech-msg">
+        Speaking Word: <span id="word"></span> 
+      </div>
+      </div>
+
+  </body>
+</html>
