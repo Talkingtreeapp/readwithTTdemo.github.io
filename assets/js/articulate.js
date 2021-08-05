@@ -1,7 +1,4 @@
-/* Articulate.js (1.1.0). (C) 2017 Adam Coti. MIT @license: en.wikipedia.org/wiki/MIT_License
-
-   See Github page at: https://github.com/acoti/articulate.js
-   See Web site at: http://articulate.purefreedom.com
+/* Do not copy or use the cod ein anyway without the explicit permission from https://gettalkingtree.com
 
 */
 
@@ -65,6 +62,7 @@
     function populateVoiceList() {
         var systemVoices = speechSynthesis.getVoices();
         for (var i = 0; i < systemVoices.length; i++) {
+			if (!systemVoices[i].name.toLowerCase().startsWith('google'))
             voices.push(new voiceObj(systemVoices[i].name, systemVoices[i].lang));
         }
     }
